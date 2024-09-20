@@ -5,6 +5,7 @@
 
 \RequirePackage{geral}
 \RequirePackage{analise}
+\RequirePackage{teoremas}
 
 \RequirePackage[margin=3cm]{geometry}
 \RequirePackage[makeroom]{cancel}
@@ -14,5 +15,3 @@
 
 \RequirePackage{tikz}
 \usetikzlibrary{fit,shapes.geometric}
-
-\renewcommand{\baselinestretch}{1.2}
