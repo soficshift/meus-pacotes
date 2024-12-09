@@ -1,0 +1,55 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{medida}[2021/04/09 Macros gerais para teoria da medida]
+
+\RequirePackage{geral}
+\RequirePackage{conjuntos}
+\RequirePackage{analise}
+\RequirePackage{funcoes}
+
+\RequirePackage{semantex}
+
+\makeatletter
+\newcommand\iid{i.i.d\@ifnextchar.{}{.\ }}
+\makeatother
+
+% measures
+\NewVariableClass\Measure[
+  parent=\Fun,
+  define keys={
+    {tv}{command = \abs} % total variation
+  }
+]
+\NewObject\Measure\Leb{\operatorname{Leb}}
+\NewObject\Measure\Prob{\mathbb{P}}
+
+\NewObject\Fun\Emp{e}[
+  output=\Measure
+]
+
+\NewObject\Fun\PSum{S}[
+  upper={\xi},
+  define keys[1]={
+    {rv}{ clear upper, upper={#1} }
+  }
+]
+
+\NewObject\Fun\DProc{D}[
+  output=\Fun,
+  upper={\xi},
+  define keys[1]={
+    {rv}{ clear upper, upper={#1} }
+  }
+]
+
+% Weak convergence
+\newcommand{\weakto}{\xrightarrow{w}}
+
+% Measures on a space
+\NewObject\SetFam\Meas{\mathcal{M}}
+
+% Conditional expectation
+\NewVariableClass\RandomVariable
+\NewObject\Notation{\CE}{\mathbb{E}}[
+  output=\RandomVariable,
+  set arg sep={\where}
+]
