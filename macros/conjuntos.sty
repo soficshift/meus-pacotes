@@ -68,3 +68,16 @@
   arg keyval=false,
   % this turns off all keyval syntax in the argument
 ]
+
+\NewVariableClass\Fun[
+  define keys={
+    {pf}{ lower = {*} },
+    {lift}{ command = {\widetilde} },
+    {inv}{ upper = {-1} }
+  },
+  define keys[1]={
+    {res}{ right return ,symbol put right ={|}, lower ={#1} },
+  },
+]
+\NewObject\Fun\f{f}
+

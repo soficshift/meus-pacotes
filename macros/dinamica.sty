@@ -3,10 +3,17 @@
 
 \RequirePackage{medida}
 
-\RequirePackage{semantex}
-
-\NewObject\Set\Orbit{\mathcal{O}}[
+\NewObject\SetFam\Orbit{\mathcal{O}}[
   define keys={
     {pos}{upper = {+}},
   }
 ]
+\NewObject\SetFam\Rec{\operatorname{Rec}}
+\NewObject\SetFam\NW{\operatorname{NW}}
+\NewObject\SetFam\supp{\operatorname{supp}}
+
+% Basins
+\NewObject\Fun\Emp{e}[
+  output=\Measure
+]
+\NewObject\Set\Basin{\mathcal{B}}

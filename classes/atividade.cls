@@ -7,10 +7,13 @@
 \RequirePackage{analise}
 \RequirePackage{teoremas}
 
+\RequirePackage[shortlabels]{enumitem}
+
 \RequirePackage[margin=3cm]{geometry}
 \RequirePackage[makeroom]{cancel}
 \RequirePackage{parskip}
 \RequirePackage[shortlabels]{enumitem}
+\RequirePackage{float}
 
 
 \RequirePackage{tikz}
