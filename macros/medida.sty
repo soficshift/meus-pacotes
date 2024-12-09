@@ -1,0 +1,20 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{medida}[2021/04/09 Macros gerais para dinâmica]
+
+\RequirePackage{conjuntos}
+
+\makeatletter
+\newcommand\iid{i.i.d\@ifnextchar.{}{.\ }}
+\makeatother
+
+% measures
+\NewVariableClass\Measure[
+  parent=\Fun,
+  define keys={
+    {tv}{command = \abs} % total variation
+  }
+]
+\NewObject\SetFam\Meas{\mathcal{M}}
+
+\NewObject\Measure\Leb{\operatorname{Leb}}
+\NewObject\Measure\Prob{\mathbb{P}}
