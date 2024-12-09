@@ -1,9 +1,19 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{teoremas}[2021/04/09 Macros gerais para dinâmica]
+\ProvidesPackage{dinamica}[2021/04/09 Macros gerais para dinâmica]
 
-\RequirePackage{conjuntos}
-\NewObject\Set\Orbit{\mathcal{O}}[
+\RequirePackage{medida}
+
+\NewObject\SetFam\Orbit{\mathcal{O}}[
   define keys={
     {pos}{upper = {+}},
   }
 ]
+\NewObject\SetFam\Rec{\operatorname{Rec}}
+\NewObject\SetFam\NW{\operatorname{NW}}
+\NewObject\SetFam\supp{\operatorname{supp}}
+
+% Basins
+\NewObject\Fun\Emp{e}[
+  output=\Measure
+]
+\NewObject\Set\Basin{\mathcal{B}}
