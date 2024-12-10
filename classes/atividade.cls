@@ -3,13 +3,15 @@
 
 \LoadClass[a4paper,11pt]{article}
 
+\linespread{1.1}
+
 \RequirePackage{geral}
 \RequirePackage{analise}
 \RequirePackage{teoremas}
 
 \RequirePackage[shortlabels]{enumitem}
 
-\RequirePackage[margin=3cm]{geometry}
+\RequirePackage[margin=2.5cm]{geometry}
 \RequirePackage[makeroom]{cancel}
 \RequirePackage{parskip}
 \RequirePackage[shortlabels]{enumitem}
