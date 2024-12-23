@@ -1,6 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{teoremas}[2021/04/09 Macros gerais para teoremas]
 \RequirePackage{amsthm,thmtools}
+\RequirePackage{translations}
 
 \declaretheorem{theorem}
 \declaretheorem[sibling=theorem]{lemma}
@@ -8,14 +9,23 @@
 \declaretheorem[sibling=theorem]{proposition}
 \declaretheorem[style=definition]{definition}
 \declaretheorem[style=definition,refname={hypothesis, Hypothesis}]{hypothesis}
-\declaretheorem[style=definition]{question}
+
+\DeclareTranslationFallback{question}{Question}
+\DeclareTranslation{portuguese}{question}{Questão}
+\declaretheorem[style=definition,name=\protect\GetTranslation{question}]{question}
 \declaretheorem[style=definition]{exercise}
+
+\DeclareTranslationFallback{solution}{Solution}
+\DeclareTranslation{portuguese}{solution}{Solução}
+\newenvironment{solution}[1][\protect\GetTranslation{solution}]
+{\proof[#1]}
+{\endproof}
+
 \declaretheorem[style=definition, within=section]{example}
 \declaretheorem[style=remark]{remark}
 
+\DeclareTranslationFallback{claim}{Claim}
+\DeclareTranslation{portuguese}{claim}{Afirmação}
 \newcounter{claim}[theorem]
-\newenvironment{claim}{\stepcounter{claim}{\endlist\noindent{}Claim \theclaim:}}{\endlist}
+\newenvironment{claim}{\stepcounter{claim}{\endlist\noindent{}\protect\GetTranslation{claim}\theclaim:}}{\endlist}
 
-\newenvironment{solution}[1][Solution]
-{\proof[#1]}
-{\endproof}
